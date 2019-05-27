@@ -1,0 +1,20 @@
+# Commons
+*.DS_Store
+*.swp
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# VS Code
+.vscode
+
+# Python
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Etc
+
