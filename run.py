@@ -1,9 +1,14 @@
+""" Runs the loan prediction.
+author: Younggue Bae
+"""
+
 import sys
 import os
 import numpy as np
 import pandas as pd
 
-from prediction_model import LoanPredictionModel
+
+from prediction_model import PredictionModel
 
 model = PredictionModel(debug=True)
 
