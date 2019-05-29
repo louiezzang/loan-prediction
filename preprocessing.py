@@ -30,7 +30,36 @@ def preprocess(data,
 
     # Impute the missing values.
     df_data = __impute_missing_values(df_data)
+
     return df_data
+
+
+def check_input_validation(df):
+    """
+    Checks the validation whether the data still have the missing values or non numerical values.
+    If the validation succeeds, returns true, otherwise throws exception.
+    :param df:
+    :return:
+    """
+    print("\nChecking the input data validation.............................")
+    invalid_fields = []
+
+    isnull_sum = df.isnull().sum()
+    for index, val in isnull_sum.iteritems():
+        if val > 0:
+            invalid_fields.append(index)
+    if len(invalid_fields) > 0:
+        raise ValueError("The NaN missing values still exist in fields: " + str(invalid_fields))
+
+    # TODO: Why not working properly??
+    isreal_sum = df.applymap(np.isreal).sum()
+    for index, val in isreal_sum.iteritems():
+        if val < len(df):
+            invalid_fields.append(index)
+    # if len(invalid_fields) > 0:
+    #     raise ValueError("The non-numerical values still exist in fields: " + str(invalid_fields))
+
+    return True
 
 
 def __drop_useless_fields(df, drop_fields):
@@ -94,6 +123,7 @@ def __convert_categorical_values(df,
 
 def __impute_missing_values(df):
     """
+    TODO: Need to be improved in order to generalize the cases
     Imputes the missing values.
     :param df:
     :return:
@@ -105,7 +135,7 @@ def __impute_missing_values(df):
     df.dropna(thresh=5)
 
     df.fillna(df.mean(), inplace=True)
-    df['emp_length'] = df['emp_length'].apply(lambda x: 0 if x == 'na' else x)
+    df['emp_length'] = df.emp_length.apply(lambda x: x if str(x).isnumeric() else 0)
 
     return df
 
@@ -132,22 +162,4 @@ def __print_missing_values_summary(df):
     print(df.isnull().sum())
     print('\n')
     print(len(df))
-
-
-def __validate_missing_values(df):
-    """
-    Validates whether the data still have the missing values.
-    :param df:
-    :return:
-    """
-    return True
-
-
-def __validate_categorical_values(df):
-    """
-    Validates whether the all values of categorical fields are converted to numerical values.
-    :param df:
-    :return:
-    """
-    return True
 
