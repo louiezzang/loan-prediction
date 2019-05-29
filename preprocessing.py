@@ -1,3 +1,7 @@
+""" This provides the utilities for pre-processing the input data.
+author: Younggue Bae
+"""
+
 import numpy as np
 import pandas as pd
 
