@@ -25,8 +25,8 @@ def preprocess(data,
         ["Id"]
     :return:
     """
-    df_data = __drop_useless_fields(data, drop_fields)
-    __print_missing_values_summary(df_data)
+    __print_missing_values_summary(data)
+    df_data = data
 
     # Convert categorical values.
     __print_categorical_unique_values(df_data, ordinal_categorical_fields_mapping, nominal_categorical_fields)
@@ -34,6 +34,8 @@ def preprocess(data,
 
     # Impute the missing values.
     df_data = __impute_missing_values(df_data)
+
+    df_data = __drop_useless_fields(df_data, drop_fields)
 
     return df_data
 
@@ -152,6 +154,7 @@ def __print_categorical_unique_values(df, ordinal_categorical_fields_mapping, no
         categorical_fields.extend(ordinal_categorical_fields_mapping.keys())
 
     print('\nCategorical values:')
+    print('------------------------------------')
     for field_name in categorical_fields:
         print('\n' + field_name + ':')
         print(df[field_name].unique())
@@ -163,6 +166,8 @@ def __print_missing_values_summary(df):
     :param df:
     :return:
     """
+    print("\nMissing values:")
+    print('------------------------------------')
     print(df.isnull().sum())
     print('\n')
     print(len(df))
