@@ -33,5 +33,6 @@ models created in the DataRobot platform such as random forest, linear regressio
 neural network regressor. They also are pretty good at coding in Python so wouldn't
 mind using another library or function. How do you suggest this customer gets feature
 importance for their data?
-> 
-
+> In terms of feature selection, we can suggest a sequential feature selection algorithm such as SBS(Sequential Backward Selection)
+to suggest which features can improve the performance of model.
+Or
