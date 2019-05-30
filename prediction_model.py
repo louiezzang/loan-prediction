@@ -88,7 +88,10 @@ class PredictionModel(object):
         log_loss = metrics.log_loss(y, y_pred)
 
         confmat = metrics.confusion_matrix(y, y_pred)
+        print('\nConfusion matrix:')
         print(confmat)
+        print('\nClassification Report:')
+        print(metrics.classification_report(y, y_pred))
 
         return {
             'f1_score': f1_score,
