@@ -126,7 +126,7 @@ def __convert_categorical_values(df,
     for field_name in nominal_categorical_fields:
         dummies = pd.get_dummies(df[field_name]).rename(columns=lambda x: 'is_' + field_name + '_' + str(x))
         df = pd.concat([df, dummies], axis=1)
-        df = df.drop([field_name],  axis=1)
+        df = df.drop([field_name], axis=1)
 
     return df
 

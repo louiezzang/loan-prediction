@@ -23,20 +23,20 @@ df_raw_data.head()
 ####################################
 print('\nData preprocessing..................')
 
-# ordinal_categorical_fields_mapping = {
-#     "pymnt_plan": {"n": 0, "y": 1},
-#     "initial_list_status": {"f": 0, "m": 1},
-#     "home_ownership": {"NONE": 1, "OTHER": 2, "MORTGAGE": 3, "RENT": 4, "OWN":  5},
-#     "policy_code": {"PC1": 1, "PC2": 2, "PC3": 3, "PC4": 4, "PC5": 5},
-#     "verification_status": {"not verified": 0, "VERIFIED - income": 1, "VERIFIED - income source": 1},
-# }
-ordinal_categorical_fields_mapping = {}
+ordinal_categorical_fields_mapping = {
+    "pymnt_plan": {"n": 0, "y": 1},
+    "initial_list_status": {"f": 0, "m": 1},
+    "home_ownership": {"NONE": 1, "OTHER": 2, "MORTGAGE": 3, "RENT": 4, "OWN": 5},
+    "verification_status": {"not verified": 0, "VERIFIED - income": 1, "VERIFIED - income source": 1},
+    #     "policy_code": {"PC1": 1, "PC2": 2, "PC3": 3, "PC4": 4, "PC5":  5},
+}
+
 nominal_categorical_fields = [
-    "pymnt_plan",
-    "initial_list_status",
-    "home_ownership",
+    #     "pymnt_plan",
+    #     "initial_list_status",
+    #     "home_ownership",
     "policy_code",
-    "verification_status",
+    #     "verification_status",
     "purpose_cat",
     "addr_state",
     "zip_code",
@@ -44,10 +44,11 @@ nominal_categorical_fields = [
 
 drop_fields = [
     "Id",
-    # "mths_since_last_delinq",
-    # "mths_since_last_record",
-    # "addr_state",
-    # "zip_code",
+    #     "collections_12_mths_ex_med",
+    #     "mths_since_last_delinq",
+    #     "mths_since_last_record",
+    #     "addr_state",
+    #     "zip_code",
 ]
 
 df_data = preprocess(data=df_raw_data,
