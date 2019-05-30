@@ -24,7 +24,7 @@ model would you recommend for the bank and why?
   It can be used for predicting the probability of an event like this use case.
   Outputs have a nice probabilistic interpretation, and the algorithm can be regularized to avoid overfitting.
   Meanwhile, a neural network is hard to interpret the output such as "black box".
-  Instead, neural network is good for unstructured data sets like image, audio, and text and it does not perform well on structured data sets.
+  Instead, neural network is good for unstructured data sets like image, audio, and text.
   Neural network is useful for image processing and natural language processing and so on.
 
 
@@ -33,4 +33,5 @@ models created in the DataRobot platform such as random forest, linear regressio
 neural network regressor. They also are pretty good at coding in Python so wouldn't
 mind using another library or function. How do you suggest this customer gets feature
 importance for their data?
+> 
 
