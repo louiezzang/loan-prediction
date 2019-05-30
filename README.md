@@ -17,6 +17,7 @@ Your models have been implemented and customers are now using them in production
 1. Imagine the credit risk use case above. You have two models: a logistic regression
 model with an F1-score of 0.60 and a neural network with an F1-score of 0.63. Which
 model would you recommend for the bank and why?
+
 > I would recommend a logistic regression model for this use case.
   Because this is the binary classification problem, so the decision boundary can be linear or non-linear.
   A logistic regression is useful if we are working with a dataset where the classes are more or less linearly separable.
@@ -33,6 +34,7 @@ models created in the DataRobot platform such as random forest, linear regressio
 neural network regressor. They also are pretty good at coding in Python so wouldn't
 mind using another library or function. How do you suggest this customer gets feature
 importance for their data?
+
 > In terms of feature selection, we can suggest a sequential feature selection algorithm such as SBS(Sequential Backward Selection)
-to suggest which features can improve the performance of model.
-Or
+  to suggest which features can improve the performance of model.
+  Or using a random forest, we can measure feature importance.
