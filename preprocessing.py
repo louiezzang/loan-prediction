@@ -35,7 +35,11 @@ def preprocess(data,
     # Impute the missing values.
     df_data = __impute_missing_values(df_data)
 
+    # Drop the useless fields(features)
     df_data = __drop_useless_fields(df_data, drop_fields)
+
+    # Standardize the scale
+    df_data = __standardize_scale(df_data)
 
     return df_data
 
@@ -143,6 +147,16 @@ def __impute_missing_values(df):
     df.fillna(df.mean(), inplace=True)
     df['emp_length'] = df.emp_length.apply(lambda x: x if str(x).isnumeric() else 0)
 
+    return df
+
+
+def __standardize_scale(df):
+    """
+    Normalizes the value scale.
+    :param df:
+    :return:
+    """
+    # TODO:
     return df
 
 

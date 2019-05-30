@@ -24,7 +24,7 @@ print('\nData preprocessing..................')
 #     "pymnt_plan": {"n": 0, "y": 1},
 #     "initial_list_status": {"f": 0, "m": 1},
 #     "home_ownership": {"NONE": 1, "OTHER": 2, "MORTGAGE": 3, "RENT": 4, "OWN":  5},
-#     "policy_code": {"PC1": 1, "PC2": 2, "PC3": 3, "PC4": 4, "PC5":  5},
+#     "policy_code": {"PC1": 1, "PC2": 2, "PC3": 3, "PC4": 4, "PC5": 5},
 #     "verification_status": {"not verified": 0, "VERIFIED - income": 1, "VERIFIED - income source": 1},
 # }
 ordinal_categorical_fields_mapping = {}
