@@ -1,6 +1,6 @@
 # Loan Analysis & Prediction
 
-## How to run
+## How to run 
 ```
 $ python3 run.py
 ```
